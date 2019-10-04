@@ -1,0 +1,19 @@
+{
+    "estado": {
+        "id": "INT NOT NULL PRIMARY KEY,",
+        "nome": "TEXT NOT NULL,",
+        "sigla": "TEXT NOT NULL"
+    },
+    "cidade": {
+        "id": "INT NOT NULL PRIMARY KEY,",
+        "nome": "TEXT NOT NULL,",
+        "id_estado": "INT NOT NULL REFERENCES estado(id)"
+    },
+    "cep": {
+        "cep": "INT NOT NULL PRIMARY KEY,",
+        "logradouro": "TEXT NOT NULL,",
+        "bairro": "TEXT NOT NULL,",
+        "id_cidade": "INT NOT NULL REFERENCES cidade(id),",
+        "id_estado": "INT NOT NULL REFERENCES estado(id)"
+    }
+}
